@@ -4,6 +4,7 @@ import VueCookies from 'vue-cookies'
 import UUID from "vue-uuid";
 import VueSocketIO from 'vue-socket.io'
 import router from './router'
+import vuetify from './plugins/vuetify';
 
 Vue.config.productionTip = false
 Vue.use(UUID);
@@ -18,5 +19,6 @@ Vue.use(new VueSocketIO ({
 
 new Vue({
   router,
-  render: h => h(App),
+  vuetify,
+  render: h => h(App)
 }).$mount('#app')
