@@ -17,6 +17,7 @@ export default {
 </script>
 
 <style lang="scss">
+@import "~materialize-css/dist/css/materialize.min.css";
 body {
   font-family: "Montserrat", "Segoe UI", sans-serif;
 }
