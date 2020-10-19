@@ -2,11 +2,17 @@
   <div>
     <div class="row">
       <div class="col s6">
+        <h3>Actions</h3>
         <form id="myid" @submit.prevent="submitHandler">
           <div class="input-field">
             <input v-model="text" id="text" type="text" />
           </div>
-          <button class="btn" type="submit">Submit</button>
+          <button
+            class="waves-effect waves-light btn blue darken-2"
+            type="submit"
+          >
+            Submit
+          </button>
         </form>
       </div>
     </div>
@@ -26,17 +32,16 @@ export default {
   methods: {
     submitHandler() {
       if (this.text) {
-        console.log(this.text);
+        this.logSubmit();
+        this.text = "";
       }
     },
 
     logSubmit() {
-      if (this.text) {
-        this.$socket.emit("visit", {
-          user_id: this.$cookies.get("user_id"),
-          action_id: this.submitCodeForDb,
-        });
-      }
+      this.$socket.emit("visit", {
+        user_id: this.$cookies.get("user_id"),
+        action_id: this.submitCodeForDb,
+      });
     },
 
     async setUser(userId) {
@@ -64,9 +69,6 @@ export default {
       user_id: this.$cookies.get("user_id"),
       action_id: this.visitCodeForDb,
     });
-
-    const form = document.getElementById("myid");
-    form.addEventListener("submit", this.logSubmit);
   },
 };
 </script>
