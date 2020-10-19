@@ -1,5 +1,7 @@
 <template>
-  <div>One</div>
+  <div>
+    <h1>One</h1>
+  </div>
 </template>
 
 <script>
@@ -8,12 +10,6 @@ export default {
     return {
       visitCodeForDb: 1,
     };
-  },
-
-  sockets: {
-    hello: function() {
-      console.log("socket on hello event");
-    },
   },
 
   methods: {

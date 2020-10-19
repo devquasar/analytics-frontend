@@ -1,5 +1,7 @@
 <template>
-  <div>Three</div>
+  <div>
+    <h3>Three</h3>
+  </div>
 </template>
 
 <script>
@@ -9,6 +11,7 @@ export default {
       visitCodeForDb: 3,
     };
   },
+
   methods: {
     async setUser(userId) {
       this.$socket.emit("addUser", { user_id: userId });
