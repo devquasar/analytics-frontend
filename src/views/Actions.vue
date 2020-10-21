@@ -59,7 +59,7 @@ export default {
     if (!cookie) {
       this.$cookies.set("user_id", this.$uuid.v4());
     }
-    console.log(`UserId is: ${cookie}`);
+    console.log(`UserId is : ${cookie}`);
   },
 
   mounted() {
