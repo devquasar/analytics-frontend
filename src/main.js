@@ -13,7 +13,7 @@ Vue.$cookies.config('30d');
 
 Vue.use(new VueSocketIO ({
   debug: true,
-  connection: 'http://localhost:3000',
+  connection: 'https://nestjs-analytics-backend.herokuapp.com/',
 }))
 
 new Vue({
