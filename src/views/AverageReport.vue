@@ -37,7 +37,7 @@ export default {
         start: new Date(),
       });
 
-      return "All was OK!";
+      return "All is OK!";
     },
   },
 
