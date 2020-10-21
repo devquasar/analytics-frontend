@@ -34,6 +34,11 @@ const routes = [
         name: 'sessionsReport',
         component: () => import('@/views/SessionsReport.vue'),
     },
+    {
+        path: '/report/avg',
+        name: 'avgReport',
+        component: () => import('@/views/AverageReport.vue'),
+    },
 ];
 
 const router = new VueRouter({

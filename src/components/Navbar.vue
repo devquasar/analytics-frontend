@@ -7,6 +7,9 @@
       <router-link tag="li" to="/report/sessions" exact active-class="active">
         <a href="/">Sessions</a>
       </router-link>
+      <router-link tag="li" to="/report/avg" exact active-class="active">
+        <a href="/">Avg pages</a>
+      </router-link>
     </ul>
     <nav class="blue darken-3">
       <div class="nav-wrapper">
