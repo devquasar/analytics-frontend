@@ -12,6 +12,12 @@ export default {
     };
   },
 
+  sockets: {
+    sessionId: function(data) {
+      console.log("sessionId :>> ", data);
+    },
+  },
+
   methods: {
     async setUser(userId) {
       this.$socket.emit("addUser", { user_id: userId });
@@ -28,7 +34,7 @@ export default {
     if (!cookie) {
       this.$cookies.set("user_id", this.$uuid.v4());
     }
-    console.log(`UserId is: ${cookie}`);
+    console.log(`userId :>>  ${cookie}`);
   },
 
   mounted() {
@@ -38,6 +44,7 @@ export default {
       user_id: this.$cookies.get("user_id"),
       action_id: this.visitCodeForDb,
     });
+    this.$socket.emit("getSessionId", {});
   },
 };
 </script>

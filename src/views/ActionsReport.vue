@@ -47,6 +47,9 @@ export default {
     actionsDataToClient: function(data) {
       this.data = data;
     },
+    sessionId: function(data) {
+      console.log("sessionId :>> ", data);
+    },
   },
 
   created: function() {
@@ -54,7 +57,7 @@ export default {
     if (!cookie) {
       this.$cookies.set("user_id", this.$uuid.v4());
     }
-    console.log(`UserId is: ${cookie}`);
+    console.log(`userId :>>  ${cookie}`);
   },
 
   mounted() {
@@ -64,6 +67,7 @@ export default {
       action_id: this.visitCodeForDb,
     });
     this.$socket.emit("getActionsData", {});
+    this.$socket.emit("getSessionId", {});
   },
 };
 </script>
